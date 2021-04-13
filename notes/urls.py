@@ -20,4 +20,5 @@ urlpatterns = [
     path('',views.home),
     path('article/<str:id>/',views.article),
     path('upload/',views.upload),
+    path('delete/<str:id>/',views.delete),
 ]

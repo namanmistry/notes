@@ -4,13 +4,10 @@ from django.http import HttpResponse
 # Create your views here.
 def home(request):
     notes=Notes.objects.all()
-    print(notes)
-
     return render(request,'notes/index.html',{'notes':notes})
 
 def article(request,id):
     note=Notes.objects.get(id=id)
-    print(note)
     return render(request,'notes/article.html',{'note':note})
 
 def upload(request):
@@ -31,3 +28,8 @@ def upload(request):
         note=Notes.objects.create(title=title,paragraph1=paragraph1,paragraph2=paragraph2,paragraph3=paragraph3,paragraph4=paragraph4,paragraph5=paragraph5,paragraph6=paragraph6,paragraph7=paragraph7,paragraph8=paragraph8,paragraph9=paragraph9,paragraph10=paragraph10)
         note.save()
         return HttpResponse("<h1>Upload was successful</h1>")
+    
+def delete(request,id):
+    note=Notes.objects.get(id=id)
+    note.delete()
+    return HttpResponse("<h1>Note deleted successfully</h1>")

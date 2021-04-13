@@ -8,10 +8,10 @@
 {% for i in notes %}
 
   <li>
-    <a href="https://easy-notes231.herokuapp.com/article/{{i.id}}" contenteditable="false">
+    <a href="http://localhost:8000/article/{{i.id}}" contenteditable="false">
     <p name"id" hidden>{{i.id}}<p>
-      <h2>{{i.title|slice:20}}</h2>
-      <p>{{i.paragraph1|slice:20}}</p>
+      <h2>{{i.title|slice:18}}</h2>
+      <p>{{i.paragraph1|slice:9}}...</p>
     </a>
   </li>
   

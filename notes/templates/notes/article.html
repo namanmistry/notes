@@ -3,7 +3,7 @@
 <head>
 <link href="{% static 'index.css' %}" rel="stylesheet" >
 </head>
-  <center><a href="http://localhost:8000/delete/{{note.id}}/"><button type="button" style="background-color:green; height:4em; width:7em;" class="btn btn-success">Delete Note</button></a></center>
+  <center><a href="https://easy-notes231.herokuapp.com/delete/{{note.id}}/"><button type="button" style="background-color:green; height:4em; width:7em;" class="btn btn-success">Delete Note</button></a></center>
 
   <center><h1>{{note.title}}</h1></center>
   <center><p>{{note.paragraph1|default_if_none:" "}}</p></center>

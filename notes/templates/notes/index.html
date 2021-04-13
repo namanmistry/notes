@@ -1,0 +1,24 @@
+{% load static %}
+<html>
+<head>
+<link href="{% static 'index.css' %}" rel="stylesheet" >
+
+</head>
+<ul>
+{% for i in notes %}
+
+  <li>
+    <a href="http://localhost:8000/article/{{i.id}}" contenteditable="false">
+    <p name"id" hidden>{{i.id}}<p>
+      <h2>{{i.title|slice:20}}</h2>
+      <p>{{i.paragraph1|slice:20}}</p>
+    </a>
+  </li>
+  
+  {% endfor %}
+</ul>
+
+<center><a href="http://localhost:8000/upload/"><button type="button" style="background-color:green; height:4em; width:7em;" class="btn btn-success">New Note</button></a></center>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script src="{% static 'index.js' %}" type="text/javascript"></script>
+</html>

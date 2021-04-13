@@ -10,6 +10,7 @@ def home(request):
 
 def article(request,id):
     note=Notes.objects.get(id=id)
+    print(note)
     return render(request,'notes/article.html',{'note':note})
 
 def upload(request):
